@@ -238,3 +238,36 @@ Plan what you want to say. Write an outline. Then ask yourself, "Does this commu
 
 
 
+## 8. The Essence of Good Design
+
+
+
+### Challenges
+
+- Think about a design principle you use regularly. Is it intended to make things easy-to-change?
+
+Modularity and simplicity with scalability. By making things modular, it's easy to know that changing one part only affects that part.
+By keeping things simple, we ignore having overly complex code that can written more simply and thus easier to understand and changed for future developers.
+Scalability sets some complexity but when done right, it actually makes it easier to change since we will see the cause and effect more clearly.
+
+- Also think about languages and programming paradigms (OO, FP, Reactive, and so on). Do any have either big positives or big negatives when it comes to helping you write ETC code? Do any have both? When coding, what can you do to eliminate the negatives and accentuate the positives?
+
+
+Object oriented code tends to be longer and a bit more complex than functional programming. 
+Big positives can come from being easy to handle objects rather than functions.
+Functional programming can really make it easy to build a modular and easy to change system.
+Try to look at what each part you are coding will be used for and leverage the best approach for your specific problem.
+
+- Many editors have support (either built-in or via extensions) to run commands when you save a file. Get your editor to popup an ETC? message every time you save and use it as a cue to think about the code you just wrote. Is it easy to change?
+
+I would save this for each code review. So let's say when we are pushing code and want to create a pull request in order to merge into the master branch, we have to think of how easy it is to maintain and change in the future.
+
+
+
+
+
+
+
+
+
+
