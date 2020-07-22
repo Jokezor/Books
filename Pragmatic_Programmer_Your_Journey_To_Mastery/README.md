@@ -265,8 +265,57 @@ I would save this for each code review. So let's say when we are pushing code an
 
 
 
+## 9. DRY—The Evils of Duplication (Don't repeat yourself)
+Don't repeat yourself and strive for having the same knowledge not duplicated.
 
 
+
+
+## 10. Orthogonality
+
+
+### Challenges
+
+- Consider the difference between tools which have a graphical user interface and small but combinable command-line utilities used at shell prompts. Which set is more orthogonal, and why? Which is easier to use for exactly the purpose for which it was intended? Which set is easier to combine with other tools to meet new challenges? Which set is easier to learn?
+
+Since the graphical interface tool only needs to have one thing to crash in order for the tool to be unusable I would say that it's less orthogonal.
+In regards to easier to use for exactly the purpose it was intended and easier to learn I would have to say the graphical interface tool.
+The set that is easier to combine with other tools is the command-line utilities.
+
+
+- C++ supports multiple inheritance, and Java allows a class to implement multiple interfaces. Ruby has mixins. What impact does using these facilities have on orthogonality? Is there a difference in impact between using multiple inheritance and multiple interfaces? Is there a difference between using delegation and using inheritance?
+
+It seems on further digging that in C++ we have multiple inheritance which can be an issue for orthogonality since an object can have several classes and thus information misrepresented. But C++ demands that we explicitly express which parent class has the feature to be invoked to avoid issues and orthogonality is maintained.
+
+In Java with multiple interfaces we inherit from one class but the interface also demands that we specify what class is doing the implementation and therefore orthogonality is maintained.
+
+From my understanding, Java and C++ both uphold orthogonality but from different approaches.
+
+
+
+### Exercises
+
+- Exercise 1: You’re asked to read a file a line at a time. For each line, you have to split it into fields. Which of the following sets of pseudo class definitions is likely to be more orthogonal? 
+class Split1 {
+  constructor(fileName)
+  def readNextLine()
+  def getField(n)
+}
+or
+class Split2 {
+  constructor(line)
+  def getField(n)
+}
+
+I would say Split2 since we haven't sent the fileName as an explicit parameter to Split1. Otherwise both would be orthogonal.
+
+- Exercise 2: What are the differences in orthogonality between object-oriented and functional languages? Are these differences inherent in the languages themselves, or just in the way people use them?
+
+
+In object-oriented languages we have orthogonality when we specify clearly what a objects attributes are and solve inheritance by following DRY.
+In functional languages we have orthogonality by our way of building our functions. They don't use global variables and we send data explicitly.
+
+I would say it's both. In functional languages it is easier to follow a orthogonal approach but we still need to make sure we send data explicitly and steer clear of global data.
 
 
 
