@@ -318,5 +318,31 @@ In functional languages we have orthogonality by our way of building our functio
 I would say it's both. In functional languages it is easier to follow a orthogonal approach but we still need to make sure we send data explicitly and steer clear of global data.
 
 
+## 14. A Pragmatic Approach
+
+### Challenges
+- Could some of the requirements of your current project be expressed in a domain-specific language? Would it be possible to write a compiler or translator that could generate most of the code required?
+
+Yes, we currently use yml for building the docker containers and also to do the testing.
+We could probably output all django app names and similar to a yml file as well.
+
+
+- If you decide to adopt mini-languages as a way of programming closer to the problem domain, you’re accepting that some effort will be required to implement them. Can you see ways in which the framework you develop for one project can be reused in others?
+
+Yes, if we continue on a similar path as the cookiecutter we used to set up our project. We could implement such a parser for setting up new paths and to generate documentation in order to keep track of name changes.
+
+### Exercies
+
+- Exercise 4: We want to implement a mini-language to control a simple turtle-graphics system. The language consists of single-letter commands, some followed by
+a single number. For example, the following input would draw a rectangle:
+P 2  # select pen 2
+D    # pen down
+W 2  # draw west 2cm
+N 1  # then north 1
+E 2  # then east 2
+S 1  # then back south
+U    # pen up
+
+Implement the code that parses this language. It should be designed so that it is simple to add new commands.
 
 
